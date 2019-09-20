@@ -1,17 +1,22 @@
 @import "reset";
+// light blue: #c9ebf7;
+// pink: #f4a6ca;
 
 
 nav{
   background-color: lightblue;
   display: flex;
   justify-content: flex-end;
-  padding: 15px;
+  padding: 10px;
 
   a{
     text-decoration: none;
     padding: 15px;
     color: black;
     font-weight: bold;
+      &:hover{
+        color: white;
+      }
   }
 }
 
@@ -21,9 +26,20 @@ nav{
 }
 
 header {
+  background-color: #c9ebf7;
   img {
     padding-top: 30px;
     width: 400px;
+    margin-left: 50px;
+    @media @mobileSE{
+      width: 200px;
+    }
+    @media @mobile678{
+      width: 250px;
+    }
+    @media @mobile678Plus{
+      width: 300px;
+    }
   }
 }
 
@@ -41,15 +57,211 @@ header {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+    @media @mobileSE{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media @mobile678{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media @mobile678Plus{
+      display: flex;
+      flex-direction: column;
+    }
   .aboutLeft{
     width: 50%;
     padding: 20px;
     font-size: 20px;
     line-height: 25px;
+      @media @mobileSE{
+        width: 100%;
+      }
+      @media @mobile678{
+        width: 100%;
+      }
+      @media @mobile678Plus{
+        width: 100%;
+      }
+    .buttons{
+      width: 100%;
+      display: inline-flex;
+      justify-content: center;
+
+      .signUpbutton{
+        width: 50%;
+        margin: 10px;
+        background-color: #f4a6ca;
+        padding: 10px 15px 10px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+          &:hover{
+            background-color: white;
+            color: #f4a6ca;
+          }
+      }
+
+      .logInButton{
+        width: 50%;
+        margin: 10px;
+        background-color: #f4a6ca;
+        padding: 10px 15px 10px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        &:hover{
+          background-color: white;
+          color: #f4a6ca;
+        }
+      }
+    }
+      .downloadButtons{
+        display: inline-flex;
+        width: 100%;
+        justify-content: space-around;
+        @media @mobileSE{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        @media @mobile678{
+          display: flex;
+          flex-direction: column;
+        }
+        @media @mobile678Plus{
+          display: flex;
+          flex-direction: column;
+        }
+      img{
+        margin: 20px;
+        width: 180px;
+        height: 50px;
+          &:hover{
+            width:190px;
+          }
+
+      }
   }
+}
 
   .aboutRight{
     justify-content: center;
+    @media @mobileSE{
+      display: none;
+    }
+    @media @mobile678{
+      display: none;
+    }
+    @media @mobile678Plus{
+      display: none;
+    }
   }
 
 }
+
+footer {
+  background-color: #c9ebf7;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  .footerContainer{
+    width: 80%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    @media @mobileSE{
+      width: 100%;
+    }
+    @media @mobile678Plus{
+      width: 100%;
+    }
+      .footerNav{
+        padding: 20px;
+        @media @mobileSE{
+          padding: 5px;
+        }
+        @media @mobile678Plus{
+          padding: 10px;
+        }
+
+        a{
+        flex-direction: column;
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+        padding: 15px;
+          &:hover{
+            color: #f4a6ca;
+          }
+          @media @mobileSE{
+            margin-left: 10px;
+            padding: 5px;
+          }
+          @media @mobile678Plus{
+            margin-left: 15px;
+            padding: 8px;
+          }
+      }
+    }
+
+      .footerNavTwo{
+        padding: 20px;
+        @media @mobileSE{
+          display: none;
+        }
+        @media @mobile678Plus{
+          display: none;
+        }
+        @media @mobile678{
+          display: none;
+        }
+
+        a{
+        flex-direction: column;
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+        padding: 15px;
+          &:hover{
+            color: #f4a6ca;
+          }
+      }
+    }
+
+    .footerNavThree{
+      padding: 20px;
+
+      a{
+      flex-direction: column;
+      margin-left: 20px;
+      text-decoration: none;
+      color: black;
+      padding: 15px;
+        &:hover{
+          color: #f4a6ca;
+        }
+        margin-left: 10px;
+        padding: 5px;
+    }
+  }
+}
+}
+
+.belowFooter{
+  background-color: lightblue;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+
+// Variables
+
+@mobileSE: ~"(max-width: 320px)";
+@mobile678: ~"(max-width: 375px)";
+@mobile678Plus: ~"(max-width: 414px)";
